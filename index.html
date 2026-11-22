@@ -1,45 +1,39 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#082f24">
-  <meta name="description" content="Listen to and share Islamic lectures by Sheikh Hassan Taye.">
-  <title>Sheikh Hassan Taye | Audio Library</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071f35"><meta name="description" content="The official audio library of Sheikh Hassan Taye. Listen to lectures, search topics and share beneficial knowledge.">
+<title>Sheikh Hassan Taye — Official Audio Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
 <body>
-<header class="topbar">
-  <a class="brand" href="#"><span class="brand-mark">۞</span><span>SHEIKH HASSAN TAYE<small>ISLAMIC AUDIO LIBRARY</small></span></a>
-  <nav><a href="#library">Audio library</a><a href="#about">About</a><a class="admin-link" href="admin.html">Admin login ↗</a></nav>
-</header>
-<main>
-  <section class="hero">
-    <div class="hero-pattern"></div>
-    <div class="hero-copy">
-      <span class="eyebrow"><i></i> KNOWLEDGE • REMINDER • GUIDANCE</span>
-      <h1>Listen. Learn.<br><em>Grow in faith.</em></h1>
-      <p>A home for the Islamic lectures and reminders of Sheikh Hassan Taye. Listen online, download recordings and share beneficial knowledge.</p>
-      <a class="gold-button" href="#library">Explore audio <span>→</span></a>
-      <div class="hero-note"><span>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span><small>In the name of Allah, the Most Merciful</small></div>
-    </div>
-    <div class="portrait-wrap"><div class="portrait-frame"><img src="assets/sheikh-hassan-taye.jpg" alt="Portrait provided for Sheikh Hassan Taye"></div><div class="portrait-caption"><span class="caption-dot"></span><div><b>Sheikh Hassan Taye</b><small>Islamic lectures & reminders</small></div></div></div>
+<div id="auth-screen" class="auth-shell">
+ <section class="auth-visual">
+  <div class="visual-top"><a class="brand" href="#"><span class="brand-symbol">۞</span><span><b>SHEIKH HASSAN TAYE</b><small>OFFICIAL AUDIO LIBRARY</small></span></a><span class="edition">AUDIO • KNOWLEDGE • REFLECTION</span></div>
+  <div class="visual-main">
+   <div class="portrait-frame"><img src="assets/sheikh-hassan-taye.jpg" alt="Sheikh Hassan Taye"></div>
+   <div class="visual-content"><div class="overline"><span></span> A LIBRARY OF BENEFICIAL KNOWLEDGE</div><h1>Listen.<br>Learn.<br><em>Grow.</em></h1><p>Explore lectures and reminders by Sheikh Hassan Taye. Find the subjects that matter to you and listen in your own time.</p>
+   <div class="quote-card"><div class="arabic">وَقُل رَّبِّ زِدْنِي عِلْمًا</div><small>“My Lord, increase me in knowledge.” <b>Qur’an 20:114</b></small></div></div>
+  </div>
+  <div class="visual-footer"><span>THE OFFICIAL LISTENING LIBRARY</span><span>LISTEN • REFLECT • SHARE</span></div>
+ </section>
+ <section class="auth-panel"><div class="auth-panel-inner">
+  <div class="mobile-brand"><span class="brand-symbol">۞</span><span><b>SHEIKH HASSAN TAYE</b><small>OFFICIAL AUDIO LIBRARY</small></span></div>
+  <div class="auth-kicker"><span class="kicker-dot"></span> MEMBER ACCESS</div>
+  <div class="auth-heading"><h2>Welcome<br><em>back.</em></h2><p>Sign in to continue to the audio library and discover a collection of beneficial talks.</p></div>
+  <form id="login-form" class="login-form"><label for="email">Email address</label><input id="email" type="email" placeholder="Enter your email address" autocomplete="username" required><label for="password">Password</label><div class="password-wrap"><input id="password" type="password" placeholder="Enter your password" autocomplete="current-password" required><button type="button" id="toggle-password" aria-label="Show password">SHOW</button></div><button class="sign-in" type="submit"><span>Enter audio library</span><b>↗</b></button><p id="login-message" class="form-message" role="status"></p></form>
+  <div class="access-note"><span class="note-icon">✦</span><span><b>Private listener access</b><br>Use the account details provided by the library administrator.</span></div>
+  <div class="auth-bottom"><a href="admin.html">Administrator portal <span>↗</span></a><span>© <span id="year"></span> Sheikh Hassan Taye Audio Library</span></div>
+ </div></section>
+</div>
+<div id="library-screen" hidden>
+ <header class="app-header"><a class="brand dark-brand" href="#"><span class="brand-symbol">۞</span><span><b>SHEIKH HASSAN TAYE</b><small>OFFICIAL AUDIO LIBRARY</small></span></a><div class="header-right"><span class="signed-in" id="signed-in-email"></span><button id="logout" class="logout-btn">Sign out ↗</button></div></header>
+ <main class="library-main">
+  <section class="library-hero"><div class="hero-copy"><div class="section-label">WELCOME TO THE LIBRARY</div><h1>Knowledge worth<br><em>listening to.</em></h1><p>Explore the collection of lectures and reminders. Search a topic, press play, and listen wherever you are.</p></div><div class="hero-art"><div class="hero-orbit"></div><span>۞</span><small>LISTEN • LEARN • REFLECT</small></div></section>
+  <section class="collection"><div class="collection-head"><div><div class="section-label">THE COLLECTION</div><h2>Explore audio lectures</h2><p>Find a recording by title, subject or keyword.</p></div><span class="record-count" id="audio-count">0 recordings</span></div>
+   <div class="filters"><label class="search-field"><span>⌕</span><input id="search" type="search" placeholder="Search lectures, topics and keywords…"></label><select id="category-filter" aria-label="Filter by category"><option value="">All topics</option><option>Tafsir</option><option>Qur'an & Hadith</option><option>Islamic Lectures</option><option>Ramadan</option><option>Marriage & Family</option><option>Islamic Advice</option><option>Other</option></select></div>
+   <div id="audio-list" class="audio-list"><div class="loading-state">Loading your audio library…</div></div>
   </section>
-
-  <section class="intro" id="about">
-    <div class="section-kicker">WELCOME</div><h2>Knowledge worth <em>sharing.</em></h2>
-    <p>This audio library is being prepared as a place to collect and share Sheikh Hassan Taye's lectures. New recordings will appear here as they are added.</p>
-  </section>
-
-  <section class="library-section" id="library">
-    <div class="section-head"><div><div class="section-kicker">THE COLLECTION</div><h2>Audio <em>library</em></h2></div><div class="count-pill" id="audio-count">0 recordings</div></div>
-    <div class="filters"><label class="search-box">⌕ <input id="search" type="search" placeholder="Search lectures..."></label><select id="category-filter"><option value="">All categories</option><option>Tafsir</option><option>Qur'an & Hadith</option><option>Islamic Lectures</option><option>Ramadan</option><option>Marriage & Family</option><option>Islamic Advice</option><option>Other</option></select></div>
-    <div id="audio-list" class="audio-grid"><div class="empty-state"><div class="empty-icon">♫</div><h3>Audio recordings coming soon</h3><p>There are no published recordings yet. Please check back soon for new lectures and reminders.</p></div></div>
-  </section>
-  <section class="quote-band"><span>“</span><p>Share beneficial knowledge and let its goodness reach further.</p><small>AN INVITATION TO LEARN AND REFLECT</small></section>
-</main>
-<footer><div class="footer-brand">۞ <b>Sheikh Hassan Taye</b></div><span>Islamic Audio Library</span><span>© <span id="year"></span> • Built to share beneficial knowledge</span></footer>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="app.js"></script>
-</body></html>
+  <footer class="library-footer"><span>۞ &nbsp; Sheikh Hassan Taye · Official Audio Library</span><span>Listen • Reflect • Share beneficial knowledge</span></footer>
+ </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="app.js"></script></body></html>
